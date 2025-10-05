@@ -11,9 +11,8 @@ hist(x, breaks = seq(40, 60, 1))
 
 data <- read.csv("penguins.csv")
 x <- data$bill_length_mm
-
-# Ящик с усами для длины клюва
+g <- data$sex
 
 png("penguins-boxplot.png")
-boxplot(x, ylab = "Bill length, mm")
+boxplot(x ~ g, xlab = "Sex", ylab = "Bill length, mm")
 dev.off()
